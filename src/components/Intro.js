@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+console.log(`Map Marker icon made by https://www.flaticon.com/authors/freepik from https://www.flaticon.com/`)
+console.log(`Origami icon made by https://www.flaticon.com/authors/freepik from https://www.flaticon.com/`)
+
 class Intro extends Component {
     state = {
         hidden: false

@@ -8,6 +8,7 @@
 .card {
   margin: 20px;
   align-self: stretch;
+  min-width: 325px;
 }
 
 .cards {
@@ -26,7 +27,7 @@ html {
 .intro {
   width: 80%;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 1px 1px 10px black;
   padding: 20px;
   margin: 20px;
@@ -40,12 +41,17 @@ html {
   align-items: center;
 }
 
+.marker:hover {
+  cursor: pointer;
+}
+
 .navbar {
   flex-wrap: wrap;
 }
 
 .navbar a {
   color: white;
+  padding-left: 25px;
 }
 
 .navbar a:hover {
@@ -59,3 +65,19 @@ html {
   padding-bottom: 0;
 }
 
+#origami {
+  position: relative;
+  height: 50vh;
+  animation-name: move;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes move {
+  0%   {left:-100px; top:0px;}
+  25%   {left:-100px; top:-75px;}
+  50%   {left:100px; top:-75px;}
+  75%   {left:100px; top:75px;}
+  100%   {left:-100px; top:0px;}
+}

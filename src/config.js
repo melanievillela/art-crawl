@@ -2,7 +2,7 @@ import * as firebase from "firebase/app";
 import "firebase/database";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD44_kHogTAQZHWvMvjXOLMkIVxtBE4i7E",
+    apiKey: process.env.REACT_APP_GOOGLE_FIREBASE_API_KEY,
     authDomain: "art-crawl-houston.firebaseapp.com",
     databaseURL: "https://art-crawl-houston.firebaseio.com",
     projectId: "art-crawl-houston",
