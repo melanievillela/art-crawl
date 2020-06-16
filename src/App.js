@@ -33,6 +33,7 @@ class App extends Component {
 					address: studioAddress
 				})
 			});
+			console.log("Studio Array: ", studioArr)
 		}).then( () => {
 			//Get artist data from Firebase
 			artistDB.once("value", (snapshot) => {			
@@ -56,6 +57,7 @@ class App extends Component {
 					})
 				});
 			})
+			console.log("Artist Array: ", artistArr)
 		}).then( () => {
 			const studio_locations = [];
 			const studio_coordinates = [];
@@ -83,12 +85,13 @@ class App extends Component {
 					name: studio.name,
 					address: studio.address
 				}))
-				console.log(studio_coordinates)
+				console.log("Studio Coordinates: ", studio_coordinates)
 			})	
 			this.setState({
 				studios: studio_coordinates
 			})
 		})
+		console.log("State: ", this.state)
 	}
 
 	render() {
