@@ -72,6 +72,7 @@ class App extends Component {
 					name: studio.name					
 				});
 			})
+			console.log("Studio Address: ", studio_locations)
 
 			//Send request to Google Geocodes with formatted addresses and add to studio_coordinates array
 			studio_locations.forEach(studio => {
