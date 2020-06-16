@@ -76,7 +76,7 @@ class App extends Component {
 			//Send request to Google Geocodes with formatted addresses and add to studio_coordinates array
 			studio_locations.forEach(studio => {
 				fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${studio.query_address},+Houston,+TX&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`)
-				.then(res => console.log("1", res))
+				.then(res => console.log("1", res.json()))
 				.then(res => res.json())
 				.then(res => console.log("2", res.json()))
 				.then(resp => studio_coordinates.push({
@@ -89,7 +89,6 @@ class App extends Component {
 				studios: studio_coordinates
 			})
 		})
-		console.log("State: ", this.state)
 	}
 
 	render() {
