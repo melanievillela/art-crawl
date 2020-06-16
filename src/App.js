@@ -33,7 +33,6 @@ class App extends Component {
 					address: studioAddress
 				})
 			});
-			console.log("Studio Array: ", studioArr)
 		}).then( () => {
 			//Get artist data from Firebase
 			artistDB.once("value", (snapshot) => {			
@@ -57,7 +56,6 @@ class App extends Component {
 					})
 				});
 			})
-			console.log("Artist Array: ", artistArr)
 		}).then( () => {
 			const studio_locations = [];
 			const studio_coordinates = [];
@@ -74,10 +72,12 @@ class App extends Component {
 					name: studio.name					
 				});
 			})
-			console.log("Studio Address: ", studio_locations)
+			console.log("Studio Locations 1: ", studio_locations)
 
 			//Send request to Google Geocodes with formatted addresses and add to studio_coordinates array
 			studio_locations.forEach(studio => {
+				console.log("Studio Locations 2: ", studio_locations)
+
 				fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${studio.query_address},+Houston,+TX&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`)
 				.then(res => res.json())
 				.then(resp => studio_coordinates.push({
