@@ -82,6 +82,7 @@ class App extends Component {
 					name: studio.name,
 					address: studio.address
 				}))
+				console.log(studio_coordinates)
 			})	
 			this.setState({
 				studios: studio_coordinates
